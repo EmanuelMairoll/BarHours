@@ -42,6 +42,10 @@ struct BarHours: App {
                     alert.addButton(withTitle: "Quit")
                     alert.addButton(withTitle: "Cancel")
 
+                    let appIcon = NSImage(named: "AppIcon")?.copy() as? NSImage
+                    appIcon?.isTemplate = false
+                    alert.icon = appIcon
+
                     if alert.runModal() == .alertFirstButtonReturn {
                         NSApplication.shared.terminate(nil)
                     }
