@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8898F86829D240190065F2BF /* BarHoursApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8898F86729D240190065F2BF /* BarHoursApp.swift */; };
-		8898F86A29D240190065F2BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8898F86929D240190065F2BF /* ContentView.swift */; };
 		8898F86C29D2401A0065F2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8898F86B29D2401A0065F2BF /* Assets.xcassets */; };
 		8898F86F29D2401A0065F2BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8898F86E29D2401A0065F2BF /* Preview Assets.xcassets */; };
+		8898F87829D24CAC0065F2BF /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 8898F87729D24CAC0065F2BF /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8898F86429D240190065F2BF /* BarHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8898F86729D240190065F2BF /* BarHoursApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarHoursApp.swift; sourceTree = "<group>"; };
-		8898F86929D240190065F2BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8898F86B29D2401A0065F2BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8898F86E29D2401A0065F2BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8898F87029D2401A0065F2BF /* BarHours.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BarHours.entitlements; sourceTree = "<group>"; };
@@ -27,6 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8898F87829D24CAC0065F2BF /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				8898F86729D240190065F2BF /* BarHoursApp.swift */,
-				8898F86929D240190065F2BF /* ContentView.swift */,
 				8898F86B29D2401A0065F2BF /* Assets.xcassets */,
 				8898F87029D2401A0065F2BF /* BarHours.entitlements */,
 				8898F86D29D2401A0065F2BF /* Preview Content */,
@@ -85,6 +84,9 @@
 			dependencies = (
 			);
 			name = BarHours;
+			packageProductDependencies = (
+				8898F87729D24CAC0065F2BF /* LaunchAtLogin */,
+			);
 			productName = BarHours;
 			productReference = 8898F86429D240190065F2BF /* BarHours.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +115,9 @@
 				Base,
 			);
 			mainGroup = 8898F85B29D240190065F2BF;
+			packageReferences = (
+				8898F87629D24CAC0065F2BF /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+			);
 			productRefGroup = 8898F86529D240190065F2BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +144,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8898F86A29D240190065F2BF /* ContentView.swift in Sources */,
 				8898F86829D240190065F2BF /* BarHoursApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +276,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BarHours/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Can has calendr pls?";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,6 +303,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BarHours/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Can has calendr pls?";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -332,6 +340,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8898F87629D24CAC0065F2BF /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8898F87729D24CAC0065F2BF /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8898F87629D24CAC0065F2BF /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8898F85C29D240190065F2BF /* Project object */;
 }
