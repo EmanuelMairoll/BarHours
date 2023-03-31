@@ -76,10 +76,22 @@ struct BarHours: App {
 
         // Round the start and end dates to the nearest quarter hour
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.minute], from: start)
-        let minute = (components.minute ?? 0) % 15
-        let startRounded = calendar.date(byAdding: .minute, value: -minute, to: start)!
-        let endRounded = calendar.date(byAdding: .minute, value: -minute, to: end)!
+
+        let startComponents = calendar.dateComponents([.minute], from: start)
+        let startMinute = (startComponents.minute ?? 0) % 15
+        let startRounded = calendar.date(byAdding: .minute, value: -startMinute, to: start)!
+
+        let endComponents = calendar.dateComponents([.minute], from: end)
+        let endMinute = (endComponents.minute ?? 0) % 15
+        let endRounded = calendar.date(byAdding: .minute, value: -endMinute, to: end)!
+
+        // Cut off seconds
+        let startComponents1 = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: startRounded)
+        let endComponents1 = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: endRounded)
+
+        let startWithoutSeconds = calendar.date(from: startComponents1)!
+        let endWithoutSeconds = calendar.date(from: endComponents1)!
+
 
         let eventStore = EKEventStore()
 
@@ -95,8 +107,8 @@ struct BarHours: App {
 
                     // Set the event title, start date, and end date
                     event.title = name
-                    event.startDate = startRounded
-                    event.endDate = endRounded
+                    event.startDate = startWithoutSeconds
+                    event.endDate = endWithoutSeconds
 
                     // Set the event's calendar to "Work Time"
                     event.calendar = workTimeCalendar
