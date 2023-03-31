@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8869EDE029D7292B004B7829 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 8869EDDF29D7292B004B7829 /* LaunchAtLogin */; };
 		8898F86829D240190065F2BF /* BarHoursApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8898F86729D240190065F2BF /* BarHoursApp.swift */; };
 		8898F86C29D2401A0065F2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8898F86B29D2401A0065F2BF /* Assets.xcassets */; };
 		8898F86F29D2401A0065F2BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8898F86E29D2401A0065F2BF /* Preview Assets.xcassets */; };
-		8898F87829D24CAC0065F2BF /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 8898F87729D24CAC0065F2BF /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8898F87829D24CAC0065F2BF /* LaunchAtLogin in Frameworks */,
+				8869EDE029D7292B004B7829 /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +85,7 @@
 			);
 			name = BarHours;
 			packageProductDependencies = (
-				8898F87729D24CAC0065F2BF /* LaunchAtLogin */,
+				8869EDDF29D7292B004B7829 /* LaunchAtLogin */,
 			);
 			productName = BarHours;
 			productReference = 8898F86429D240190065F2BF /* BarHours.app */;
@@ -116,7 +116,7 @@
 			);
 			mainGroup = 8898F85B29D240190065F2BF;
 			packageReferences = (
-				8898F87629D24CAC0065F2BF /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				8869EDDE29D7292B004B7829 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = 8898F86529D240190065F2BF /* Products */;
 			projectDirPath = "";
@@ -342,9 +342,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8898F87629D24CAC0065F2BF /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+		8869EDDE29D7292B004B7829 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin.git";
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -353,9 +353,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8898F87729D24CAC0065F2BF /* LaunchAtLogin */ = {
+		8869EDDF29D7292B004B7829 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8898F87629D24CAC0065F2BF /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			package = 8869EDDE29D7292B004B7829 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -4,10 +4,6 @@ import SwiftUI
 
 @main
 struct BarHours: App {
-    init() {
-        LaunchAtLogin.isEnabled = true
-    }
-
     @State var currentWorkType: Int = 0
     @State var started: Date? = nil
 
@@ -32,6 +28,8 @@ struct BarHours: App {
             }
 
             Divider()
+
+            LaunchAtLogin.Toggle("Autostart")
 
             Button("Quit") {
                 if currentWorkType != 0 {
@@ -69,7 +67,7 @@ struct BarHours: App {
     ]
 
     func saveIntoCalendar(name: String, start: Date, end: Date) {
-        // Filter out events shorter than 5 minutes
+        // Filter out events shorter than 15 minutes
         let duration = end.timeIntervalSince(start)
         guard duration >= 900 else {
             print("Event shorter than 15 minutes, skipping")
@@ -79,7 +77,7 @@ struct BarHours: App {
         // Round the start and end dates to the nearest quarter hour
         let calendar = Calendar.current
         let components = calendar.dateComponents([.minute], from: start)
-        let minute = components.minute ?? 0 % 15
+        let minute = (components.minute ?? 0) % 15
         let startRounded = calendar.date(byAdding: .minute, value: -minute, to: start)!
         let endRounded = calendar.date(byAdding: .minute, value: -minute, to: end)!
 
